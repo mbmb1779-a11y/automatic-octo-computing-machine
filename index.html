@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="dashboard-container">
+  <header>
+    <h1>محفظتي الذكية 💼</h1>
+    <p>تابع دخلك ومصاريفك وحلل بياناتك المالية بدقة</p>
+  </header>
+
+  <!-- بطاقات الملخص المالي -->
+  <div class="summary-cards">
+    <div class="card income">
+      <h3>إجمالي الدخل</h3>
+      <p id="total-income">0.00 ر.س</p>
+    </div>
+    <div class="card expenses">
+      <h3>إجمالي المصروفات</h3>
+      <p id="total-expenses">0.00 ر.س</p>
+    </div>
+    <div class="card balance">
+      <h3>الرصيد المتبقي</h3>
+      <p id="net-balance">0.00 ر.س</p>
+    </div>
+  </div>
+
+  <!-- قسم العمليات والرسم البياني -->
+  <div class="main-content">
+    
+    <!-- نموذج إضافة عملية جديدة -->
+    <div class="form-section">
+      <h3>إضافة معاملة جديدة</h3>
+      <form id="finance-form">
+        <div class="form-group">
+          <label>عنوان المعاملة</label>
+          <input type="text" id="title" placeholder="مثال: راتب، بقالة، بنزين" required>
+        </div>
+        <div class="form-group">
+          <label>المبلغ</label>
+          <input type="number" id="amount" placeholder="0.00" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label>النوع</label>
+          <select id="type">
+            <option value="income">دخل (+)</option>
+            <option value="expense">مصروف (-)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">حفظ المعاملة</button>
+      </form>
+    </div>
+
+    <!-- الرسم البياني -->
+    <div class="chart-section">
+      <h3>التحليل المالي</h3>
+      <canvas id="financeChart"></canvas>
+    </div>
+    
+  </div>
+
+  <!-- جدول المعاملات الأخيرة -->
+  <div class="history-section">
+    <h3>سجل المعاملات الأخيرة</h3>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>العنوان</th>
+            <th>المبلغ</th>
+            <th>النوع</th>
+            <th>إجراء</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-table-body">
+          <!-- البيانات تضاف هنا بواسطة JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  <!-- 1. استدعاء مكتبة الرسوم البيانية أولاً -->
+  <script src="https://jsdelivr.net"></script>
+
+  <!-- 2. استدعاء ملف الجافاسكربت الخاص بمشروعك ثانياً -->
+  <script src="script.js"></script>
+</body>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.min.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>
